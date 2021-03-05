@@ -1,9 +1,11 @@
 package ciclo.vida.training.command.portlet;
 
 import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys;
-
 import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.Validator;
+import org.osgi.service.component.annotations.Component;
 
 import java.io.IOException;
 
@@ -15,10 +17,6 @@ import javax.portlet.PortletException;
 import javax.portlet.ProcessEvent;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
-
-import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.Validator;
-import org.osgi.service.component.annotations.Component;
 
 /**
  * @author jfernach
@@ -34,7 +32,7 @@ import org.osgi.service.component.annotations.Component;
 			"javax.portlet.display-name=ciclo-vida-training-command Portlet",
 			"javax.portlet.init-param.template-path=/",
 			"javax.portlet.init-param.view-template=/view.jsp",
-			"javax.portlet.name=" + CicloVidaTrainingCommandPortletKeys.CicloVidaTrainingCommand,
+			"javax.portlet.name=" + CicloVidaTrainingCommandPortletKeys.CICLO_VIDA_TRAINING_COMMAND,
 			"javax.portlet.resource-bundle=content.Language",
 			"javax.portlet.security-role-ref=power-user,user",
 			"javax.portlet.supported-processing-event=message;ciclovida"
@@ -48,9 +46,9 @@ public class CicloVidaTrainingCommandPortlet extends MVCPortlet {
 	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
 
-		String messageEvent = ParamUtil.getString(renderRequest,"messageReceived", StringPool.BLANK);
+		String messageEvent = ParamUtil.getString(renderRequest,CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, StringPool.BLANK);
 		if(Validator.isNotNull(messageEvent)){
-			renderRequest.setAttribute("messageReceived", messageEvent);
+			renderRequest.setAttribute(CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, messageEvent);
 			System.out.println("Render por defecto cargado desde event");
 		}else{
 			System.out.println("Este es el render por defecto que carga el view.jsp");
@@ -64,7 +62,7 @@ public class CicloVidaTrainingCommandPortlet extends MVCPortlet {
 		String message = (String) event.getValue();
 
 		System.out.println("Recibidor de Eventos");
-		eventResponse.getRenderParameters().setValue("messageReceived", message);
+		eventResponse.getRenderParameters().setValue(CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, message);
 	}
 	
 }

@@ -19,7 +19,7 @@ import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys
 @Component(
 		immediate = true,
 		property = {
-			"javax.portlet.name=" + CicloVidaTrainingCommandPortletKeys.CicloVidaTrainingCommand,
+			"javax.portlet.name=" + CicloVidaTrainingCommandPortletKeys.CICLO_VIDA_TRAINING_COMMAND,
 			"mvc.command.name=resource1Command"
 
 		},
