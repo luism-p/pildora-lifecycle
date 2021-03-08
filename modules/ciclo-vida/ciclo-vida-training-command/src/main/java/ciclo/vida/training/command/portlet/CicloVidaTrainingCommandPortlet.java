@@ -1,10 +1,7 @@
 package ciclo.vida.training.command.portlet;
 
 import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys;
-import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
-import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.Validator;
 import org.osgi.service.component.annotations.Component;
 
 import java.io.IOException;
@@ -15,8 +12,6 @@ import javax.portlet.EventResponse;
 import javax.portlet.Portlet;
 import javax.portlet.PortletException;
 import javax.portlet.ProcessEvent;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 /**
  * @author jfernach
@@ -42,19 +37,19 @@ import javax.portlet.RenderResponse;
 public class CicloVidaTrainingCommandPortlet extends MVCPortlet {
 
 
-	@Override
-	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
-			throws IOException, PortletException {
-
-		String messageEvent = ParamUtil.getString(renderRequest,CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, StringPool.BLANK);
-		if(Validator.isNotNull(messageEvent)){
-			renderRequest.setAttribute(CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, messageEvent);
-			System.out.println("Render por defecto cargado desde event");
-		}else{
-			System.out.println("Este es el render por defecto que carga el view.jsp");
-		}
-		super.render(renderRequest, renderResponse);
-	}
+//	@Override
+//	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
+//			throws IOException, PortletException {
+//
+//		String messageEvent = ParamUtil.getString(renderRequest,CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, StringPool.BLANK);
+//		if(Validator.isNotNull(messageEvent)){
+//			renderRequest.setAttribute(CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, messageEvent);
+//			System.out.println("Render por defecto cargado desde event");
+//		}else{
+//			System.out.println("Este es el render por defecto que carga el view.jsp");
+//		}
+//		super.render(renderRequest, renderResponse);
+//	}
 
 	@ProcessEvent(qname = "{ciclovida}message")
 	public void receivedEvent(EventRequest eventRequest, EventResponse eventResponse) throws  IOException, PortletException{
