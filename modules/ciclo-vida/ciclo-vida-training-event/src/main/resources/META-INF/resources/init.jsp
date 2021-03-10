@@ -10,3 +10,9 @@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <liferay-theme:defineObjects />
 
 <portlet:defineObjects />
+
+<aui:script>
+    $(function (){
+        $('.ciclovida-event-portlet').css('background-color', getRandomColor());
+    })
+</aui:script>

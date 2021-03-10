@@ -1,5 +1,13 @@
 <%@ include file="/META-INF/resources/init.jsp" %>
 
-<p>
-	<b><liferay-ui:message key="ciclovidaevent.caption"/></b>
-</p>
+<portlet:actionURL var="actionEvent" name="event/action" />
+
+<portlet:renderURL var="renderPortlet" >
+	<portlet:param name="mvcRenderCommandName" value="event/render/portlet" />
+</portlet:renderURL>
+
+
+<aui:button-row cssClass="d-flex justify-content-center">
+	<aui:button type="button" name="action-first" href="${actionEvent}" value="Enviar evento"/>
+	<aui:button type="button" name="render-portlet" href="${renderPortlet}" value="Render Portlet"/>
+</aui:button-row>

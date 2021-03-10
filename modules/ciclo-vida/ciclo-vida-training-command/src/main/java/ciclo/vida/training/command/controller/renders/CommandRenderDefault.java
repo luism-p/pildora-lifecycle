@@ -1,4 +1,4 @@
-package ciclo.vida.training.command.renders;
+package ciclo.vida.training.command.controller.renders;
 
 import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys;
 import com.liferay.petra.string.StringPool;

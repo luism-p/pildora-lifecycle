@@ -1,4 +1,4 @@
-package ciclo.vida.training.command.renders;
+package ciclo.vida.training.command.controller.renders;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCRenderCommand;
 

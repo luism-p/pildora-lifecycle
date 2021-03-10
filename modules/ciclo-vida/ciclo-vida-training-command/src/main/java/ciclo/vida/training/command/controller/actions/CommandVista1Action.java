@@ -1,4 +1,4 @@
-package ciclo.vida.training.command.actions;
+package ciclo.vida.training.command.controller.actions;
 
 import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand;

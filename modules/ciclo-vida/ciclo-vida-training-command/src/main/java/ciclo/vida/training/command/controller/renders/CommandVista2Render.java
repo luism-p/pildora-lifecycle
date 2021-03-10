@@ -1,4 +1,4 @@
-package ciclo.vida.training.command.renders;
+package ciclo.vida.training.command.controller.renders;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCRenderCommand;
 
@@ -15,18 +15,18 @@ import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys
 		property = {
 			
 			"javax.portlet.name=" + CicloVidaTrainingCommandPortletKeys.CICLO_VIDA_TRAINING_COMMAND,
-			"javax.portlet.name=CicloVidaTrainingCommandAdvance",
-			"mvc.command.name=render3Command"
+			"mvc.command.name=render2Command"
 		},
 		service = MVCRenderCommand.class
 	)
-public class CommandVista3Render implements MVCRenderCommand {
+public class CommandVista2Render implements MVCRenderCommand {
 
 	@Override
 	public String render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException {
 		
-		System.out.println("Este es el render command de vista3.jsp");
-		return "/vista3.jsp";
+		System.out.println("Este es el render command de vista2.jsp");
+		
+		return "/vista2.jsp";
 	}
 
 }

@@ -17,7 +17,6 @@ import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
-import javax.xml.namespace.QName;
 
 /**
  * @author jfernach
@@ -34,7 +33,6 @@ import javax.xml.namespace.QName;
                    "javax.portlet.name=" + CicloVidaTrainingPortletKeys.CICLO_VIDA_TRAINING, //
                    "javax.portlet.resource-bundle=content.Language", //
                    "javax.portlet.security-role-ref=power-user,user", //
-                   "javax.portlet.supported-publishing-event=messsage;ciclovida" //
            },
            service = Portlet.class)
 public class CicloVidaTrainingPortlet extends MVCPortlet {
@@ -72,8 +70,6 @@ public class CicloVidaTrainingPortlet extends MVCPortlet {
         System.out.println("Action por defecto MVCPortlet");
         actionResponse.getRenderParameters().setValue("param1", "value1");
 
-        QName qName = new QName("ciclovida", "message");
-        actionResponse.setEvent(qName, "mensaje enviado mediante evento desde ciclo-vida-training");
         super.processAction(actionRequest, actionResponse);
     }
 
