@@ -32,8 +32,6 @@ public class CommandVista1Action implements MVCActionCommand{
 
 		actionResponse.setEvent(qName, "mensaje enviado mediante evento desde ciclo-vida-training-event");
 		
-		actionResponse.getRenderParameters().setValue("mvcRenderCommandName", "\\");
-		
 		return result;
 	}
 

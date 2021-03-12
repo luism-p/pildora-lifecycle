@@ -1,7 +1,9 @@
 package ciclo.vida.training.command.controller.renders;
 
 import ciclo.vida.training.command.constants.CicloVidaTrainingCommandPortletKeys;
+import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCRenderCommand;
+import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.training.ciclovida.event.constants.CicloVidaEventPortletKeys;
 import org.osgi.service.component.annotations.Component;
 
@@ -22,8 +24,9 @@ public class CommandVistaExterna implements MVCRenderCommand {
 
 	@Override
 	public String render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException {
-		
-		System.out.println("Este es el render command de viewExterna.jsp");
+
+		String param = ParamUtil.getString(renderRequest,"param", StringPool.BLANK);
+		System.out.println("Este es el render command de viewExterna.jsp y tre el par&aacute;metro: " +param);
 		return "/viewExterna.jsp";
 	}
 

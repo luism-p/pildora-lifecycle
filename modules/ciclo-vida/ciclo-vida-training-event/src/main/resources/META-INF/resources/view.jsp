@@ -1,9 +1,11 @@
+<%@ page import="com.liferay.training.ciclovida.event.constants.CicloVidaEventPortletKeys" %>
 <%@ include file="/META-INF/resources/init.jsp" %>
 
 <portlet:actionURL var="actionEvent" name="event/action" />
 
 <portlet:renderURL var="renderPortlet" >
 	<portlet:param name="mvcRenderCommandName" value="event/render/portlet" />
+	<portlet:param name="param" value="test" />
 </portlet:renderURL>
 
 
