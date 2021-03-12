@@ -3,7 +3,8 @@
 <h1>Vista 2</h1>
 
 <portlet:actionURL name="action1Command" var="action1URL"/>
-<portlet:renderURL var="renderDefault" />
+
+<portlet:renderURL var="renderDefault"/>
 
 
 <aui:button-row cssClass="d-flex justify-content-center">

@@ -5,6 +5,7 @@
 
 
 <h1>Esta vista ha sido renderizada desde otro Portlet</h1>
+<h1>${param2}</h1>
 
 <portlet:renderURL var="renderDefault" />
 

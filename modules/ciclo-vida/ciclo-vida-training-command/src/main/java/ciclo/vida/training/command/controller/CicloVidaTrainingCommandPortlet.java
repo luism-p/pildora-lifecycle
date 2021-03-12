@@ -37,20 +37,6 @@ import javax.portlet.ProcessEvent;
 public class CicloVidaTrainingCommandPortlet extends MVCPortlet {
 
 
-//	@Override
-//	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
-//			throws IOException, PortletException {
-//
-//		String messageEvent = ParamUtil.getString(renderRequest,CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, StringPool.BLANK);
-//		if(Validator.isNotNull(messageEvent)){
-//			renderRequest.setAttribute(CicloVidaTrainingCommandPortletKeys.MESSAGE_RECEIVED, messageEvent);
-//			System.out.println("Render por defecto cargado desde event");
-//		}else{
-//			System.out.println("Este es el render por defecto que carga el view.jsp");
-//		}
-//		super.render(renderRequest, renderResponse);
-//	}
-
 	@ProcessEvent(qname = "{ciclovida}message")
 	public void receivedEvent(EventRequest eventRequest, EventResponse eventResponse) throws  IOException, PortletException{
 		Event event = eventRequest.getEvent();

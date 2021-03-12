@@ -2,7 +2,10 @@
 
 
 <portlet:actionURL var="actionURL"/>
-<portlet:resourceURL var="resourceURL"/>
+
+<portlet:resourceURL var="resourceURL">
+    <portlet:param name="param" value="test"/>
+</portlet:resourceURL>
 
 <br>
 <h3 class="resource"></h3>
@@ -16,6 +19,7 @@
 
 
 <script>
+    console.log('${resourceURL}');
     function getResource () {
         AUI().use('aui-io-request', function (A) {
             A.io.request('${resourceURL}', {

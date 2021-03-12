@@ -27,6 +27,7 @@ public class CommandVistaExterna implements MVCRenderCommand {
 
 		String param = ParamUtil.getString(renderRequest,"param", StringPool.BLANK);
 		System.out.println("Este es el render command de viewExterna.jsp y tre el par&aacute;metro: " +param);
+		renderRequest.setAttribute("param2", "Hola mundo!!");
 		return "/viewExterna.jsp";
 	}
 
